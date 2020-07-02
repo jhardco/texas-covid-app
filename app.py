@@ -47,6 +47,7 @@ colors = {
     'text': 'black'
 }
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app.title='Texas Covid Tracking'
 server = app.server
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
         html.H1(
