@@ -94,9 +94,9 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
             style={'width':'40%','margin':'auto'}),
         
         html.Div(style={'backgroundColor': colors['background']},children=[
-        dcc.Graph(id = 'cnty_10k',style={'float':'left','width':'48%','padding':'20px'}),
+        dcc.Graph(id = 'cnty_10k',style={'float':'left','width':'46%','padding':'20px'}),
         
-        dcc.Graph(id = 'deaths', style={'float':'right','width':'48%','padding':'20px'})
+        dcc.Graph(id = 'deaths', style={'float':'right','width':'46%','padding':'20px'})
         ])
 ])
 
@@ -128,7 +128,7 @@ def update_map(value):
                                         hovertemplate ='<b>County: %{customdata[0]}</b><br>Cases per 10,000: %{z}<br>2019 Population: %{customdata[1]:,3f}<br># of Cases: %{customdata[2]:,3f}'))
     county.update_layout(mapbox_style="carto-positron",
                     mapbox_zoom=5, mapbox_center = {"lat": 31.19282, "lon":-99.51260})
-    county.update_layout(paper_bgcolor = 'antiquewhite',margin={'l':25, 'r':25, 't':45, 'b':15}, height=650, title ='Number of Cases by County on ' +str(title).strip('[]\''))
+    county.update_layout(paper_bgcolor = 'antiquewhite',margin={'l':25, 'r':25, 't':45, 'b':15}, height=650, title ='Number of Cases per 10,000 by County on ' +str(title).strip('[]\''))
     return county
 
 @app.callback(dash.dependencies.Output('deaths','figure'),
