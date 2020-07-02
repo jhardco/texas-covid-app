@@ -88,7 +88,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
                 18:'2020-03-01',
                 49:'2020-04-01',
                 79:'2020-05-01',
-                110:'2020-06-01'
+                110:'2020-06-01',
+                140:'2020-07-01'
             },
             ),
             style={'width':'40%','margin':'auto'}),
