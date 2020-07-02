@@ -5,16 +5,17 @@ import json
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import os
 # import ssl
 
 
 # import case data and select texas
 data = pd.read_csv('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
 texas = data[data['state']=='Texas']
-pop = pd.read_csv(r'D:\Google Drive\work copy\Population\TxPop_Indexed.csv')
+pop = pd.read_csv('TxPop_Indexed.csv')
 #import texas county geojson and make geodataframe for points
-f = open(r'D:\Google Drive\work copy\geojsons\simp_tx_county.geojson')
-p = pd.read_csv(r'C:\Users\jhardco\covidTexas\points.csv')
+f = open('simp_tx_county.geojson')
+p = pd.read_csv('points.csv')
 tx_json = json.load(f)
 #join cases data with case data
 tx_geo = texas.merge(p, left_on='fips', right_on='GEOID')
